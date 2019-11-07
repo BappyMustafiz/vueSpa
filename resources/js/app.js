@@ -17,7 +17,11 @@ const router = new VueRouter({
     mode: 'history'
 });
 
-
+//check user login info
+router.beforeEach((to, form, next) => {
+    const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
+    const 
+})
 
 const store = new Vuex.Store(StoreData);
 
