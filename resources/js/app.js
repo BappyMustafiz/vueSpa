@@ -6,24 +6,22 @@ import VueRouter from 'vue-router'
 import {routes} from './routes'
 import StoreData from './store'
 import MainApp from './components/MainApp.vue'
+import {initialize} from './helpers/general'
 
 
 Vue.use(Vuex)
 Vue.use(VueRouter)
 
 
+const store = new Vuex.Store(StoreData);
+
 const router = new VueRouter({
     routes,
     mode: 'history'
 });
 
-//check user login info
-router.beforeEach((to, form, next) => {
-    const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
-    const 
-})
+initialize(router, store);
 
-const store = new Vuex.Store(StoreData);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

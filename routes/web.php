@@ -11,6 +11,9 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('{any}', function () {
     return view('welcome');
-});
+})->where('any','.*');
+
+//check vue router
+// Route::get('{path}', 'HomeController@index')->where( 'path' , '([A-z\d\-\/_.]+)?' );
